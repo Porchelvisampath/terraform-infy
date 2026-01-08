@@ -15,7 +15,7 @@ jobs:
 
     defaults:
       run:
-        working-directory:    # terraform code dir
+        working-directory: terraform-http  # terraform code dir
 
     steps:
       - name: Checkout code
