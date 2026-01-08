@@ -3,7 +3,7 @@ name: Terraform GCP Deploy
 on:
   push:
     branches:
-     # - main
+      - main
 
 permissions:
   contents: read
