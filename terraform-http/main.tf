@@ -1,4 +1,3 @@
-# VPC Module
 module "vpc" {
   source      = "./modules/vpc"
   project     = var.project
@@ -7,8 +6,6 @@ module "vpc" {
   subnet_cidr = var.subnet_cidr
 }
 
-
-# Cloud NAT Module
 module "nat" {
   source      = "./modules/nat"
   router_name = var.router_name
@@ -18,7 +15,6 @@ module "nat" {
   depends_on  = [module.vpc]
 }
 
-# Compute Module (Private VM)
 module "compute" {
   source       = "./modules/compute"
   vm_name      = var.vm_name
@@ -28,7 +24,6 @@ module "compute" {
   subnet_id    = module.vpc.subnet_id
   depends_on   = [module.vpc, module.nat]
 }
-
 
 
 module "firewall" {
