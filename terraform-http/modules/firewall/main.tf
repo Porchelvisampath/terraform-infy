@@ -4,7 +4,7 @@ resource "google_compute_firewall" "allow_lb_http" {
 
   direction = "INGRESS"
 
-  # Google Load Balancer IP ranges ONLY
+  # Load Balancer IP ranges 
   source_ranges = [
     "130.211.0.0/22",
     "35.191.0.0/16"
@@ -15,6 +15,6 @@ resource "google_compute_firewall" "allow_lb_http" {
     ports    = ["80"]
   }
 
-  # Apply only to web VM
+  # web VM
   target_tags = ["web-server"]
 }
