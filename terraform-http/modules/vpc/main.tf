@@ -10,6 +10,6 @@ resource "google_compute_subnetwork" "private_subnet" {
   region                   = var.region
   network                  = google_compute_network.vpc.id
   ip_cidr_range            = var.subnet_cidr
-  private_ip_google_access = true  # Required for Cloud NAT & Google APIs
+  private_ip_google_access = true  
 }
 
